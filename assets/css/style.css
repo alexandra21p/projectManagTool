@@ -1,0 +1,306 @@
+/*
+========================= CSS RESET ===========================
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, select {
+  font-family: "Century Gothic", sans-serif;
+	background-color: #FAFAFA;
+}
+h2 {
+	font-size: 20px;
+	font-weight: bold;
+	padding: 0.5em 0.2em;
+	border-bottom: 1px solid black;
+	margin: 0.3em 5.5em;
+	width: 70%;
+}
+p, h3 {
+	background-color: #E0E0E0;
+	padding: 0.3em 0.7em;
+	margin-top: 0.2em;
+	line-height: 20px;
+	font-size: 15px;
+}
+
+h1 {
+	font-size: 18px;
+	padding: 0.8em 0;
+	margin-bottom: 1em;
+	font-weight: bolder;
+	border-bottom: 1px solid black;
+	text-align:center;
+}
+input, select, label, textarea {
+	font-family: "Century Gothic", sans-serif;
+	display:inline-block;
+  width: 40%;
+	padding: 0.3em 0.5em;
+  margin: 0.8em 0.5em;
+}
+label {
+	text-align:center;
+}
+
+textarea {
+    resize: none;
+}
+
+/*
+================== TOPBAR WITH TITLE =================
+*/
+#topbar {
+    opacity: .9;
+    position: fixed;
+    width: 100%;
+    height: 3.5em;
+    left: 0;
+    top: 0;
+    background: #F5F5F5;
+    border-bottom: 1px solid #708090;
+    z-index: 1;
+}
+  #title {
+      font-family: Consolas, 'consolas', serif;
+      font-size: 17px;
+      text-transform: uppercase;
+      margin: 1.2em auto;
+      text-align: center;
+      width: 60em;
+      z-index: 3;
+  }
+
+	/*
+	================== SIDEBAR WITH THE MENU =================
+	*/
+  #sline {
+    position: fixed;
+    width: 1px;
+    height: 100%;
+    margin-left: 20em;
+    top: 0;
+    background: #708090;
+    z-index: 3;
+  }
+  .sidebar {
+		position:fixed;
+		top: 0;
+    width: 18em;
+    border-right: 1px solid #708090;
+    background-color: #f3f3f3;
+    height: 100%;
+    z-index: 2;
+  }
+
+	ul {
+    list-style-type: none;
+    margin: 10em auto;
+    padding: 0;
+    max-width: 16em;
+    background-color: #f3f3f3;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 1em 3em;
+    text-decoration: none;
+		border-bottom: 1px solid #e7e7e7;
+		cursor: pointer;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #BDBDBD;
+    color: #ffffff;
+}
+
+.submenu {
+	display: none;
+	width: 13em;
+	font-size: 14px;
+	font-style: italic;
+	margin: 0.3em 0.2em;
+	border-right: 1px solid #e7e7e7;
+	border-radius: 2px;
+	padding: 0.5em 3.2em;
+}
+
+/*
+================== MAIN CONTAINER =================
+*/
+.main {
+	position:relative;
+	top: 5.5em;
+	left: 20em;
+  width: 75%;
+  /*max-width: 75%;*/
+  height:100%;
+  /*margin: 3em 20em;*/
+  background-color: #FAFAFA;
+}
+
+.sprint-elem {
+	background-color: white;
+	display: inline-block;
+	width: 30%;
+	margin: 1em 2.5em;
+	vertical-align:top;
+	border: 1px solid #FAFAFA;
+}
+
+.flex-item-sprint {
+  flex: 1;
+	height:100%;
+  margin: 2em 1em;
+  background-color: #FAFAFA;
+	border: 4px solid #e7e7e7;
+	border-radius: 2px;
+}
+
+.issue-types {
+	border-left: 8px solid;
+	padding: 0.5em;
+	margin-top: 1em;
+	border-bottom: 1px solid grey;
+}
+.feature {
+	border-color: #60a917;
+}
+.bug {
+	border-color: #E81123;
+}
+.task {
+	border-color: #0078D7
+}
+.flex-container, .flex-container-status {
+	display: flex;
+	flex-direction: column;
+  justify-content: space-between;
+	flex-wrap: wrap;
+	transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+}
+.flex-container-status {
+	flex-direction: row;
+}
+.flex-item {
+  flex: 1;
+	max-width: 70%;
+	height: 310px;
+  margin: 2em 7em;
+  background-color: #FAFAFA;
+	border: 4px solid #e7e7e7;
+	border-radius: 2px;
+}
+
+.button, .move-button {
+	width: 25px;
+	height: 25px;
+	background-color: #FFFFFF;
+	border: 1px solid tomato;
+	border-radius: 2px;
+	font-size: 25px;
+	text-align: center;
+	float: right;
+}
+
+.move-button {
+	width: 70px;
+	font-size: 15px;
+	font-weight: bold;
+	float: none;
+	margin-left: 30px;
+	padding-top: 3px;
+}
+
+
+.move-issue-div {
+	margin-top: 10px;
+	background-color: #E0E0E0;
+	border: 1px solid #34495e;
+	border-radius: 2px;
+	width: 140px;
+	height: 100px;
+}
+
+#moveIssue {
+	width: 120px;
+	padding: 0.1em 0.5em;
+}
+
+#add-issue, #create-sprint, #add-subtask, #update-issue {
+	position:absolute;
+	top: 0;
+	left: 23%;
+	background-color: #E0E0E0;
+	border-radius: 5px;
+  display: none;
+	width: 40%;
+  z-index: 3;
+	transition: opacity 0.6s ease-in-out 3s;
+	-webkit-transition: opacity 0.6s ease-in-out 3s;
+}
+
+span {
+	padding: 0.3em 0.8em;
+	border-bottom: 1px solid black;
+}
+
+input[type=button] {
+	background-color: #26A69A;
+	border: none;
+	border-radius: 3px;
+	padding: 0.5em 1em;
+	width: 30%;
+	margin: 2em 10.5em;
+	font-family: "Century Gothic", sans-serif;
+}

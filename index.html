@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Management Tool</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+<div id="topbar"><div id="title">Project Management Tool</div></div>
+<div class="sidebar">
+  <ul>
+    <li><a id="overview">project overview</a></li>
+    <li><a id="addIssueMenu">add issue</a></li>
+    <li><a id="createSprintMenu">create sprint</a></li>
+    <li><a id="goToSprintMenu">go to sprint ►</a></li>
+    <li><a id="filterByStatus">filter by status ►</a></li>
+</ul>
+</div>
+
+<div class="main">
+  <h2 id="proj-overview"></h2>
+  <div class="flex-container">
+  </div>
+
+  <div id="add-issue">
+    <h1>Add a new issue</h1>
+    <form>
+      <label for="type">Type</label>
+      <select id="selectType">
+        <option value="Feature">Feature</option>
+        <option value="Bug">Bug</option>
+        <option value="Task">Task</option>
+      </select>
+      <br>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+      <label for="sprint">Sprint</label>
+      <select id="selectSprint">
+      </select>
+      <label for="assignee">Assignee</label>
+      <select id="selectAssignee">
+      </select>
+      <label for="descr">Description</label>
+      <input type="text" id="descr" name="descr">
+
+      <label for="comm">Comments (separate multiple comments by ";")</label>
+      <textarea rows="3" cols="25" id="comm" name="comm"></textarea>
+
+      <input type="button" id="addBtn" value="add">
+    </form>
+  </div>
+
+  <div id="update-issue">
+    <h1>Details for issue (can be changed)</h1>
+    <form>
+      <label for="type">Type</label>
+      <select id="selectTypeUpdate">
+        <option value="Feature">Feature</option>
+        <option value="Bug">Bug</option>
+        <option value="Task">Task</option>
+      </select>
+      <br>
+      <label for="name">Name</label>
+      <input type="text" id="nameUpdate" name="name">
+      <label for="assignee">Assignee</label>
+      <select id="selectAssigneeUpdate">
+      </select>
+      <label for="descr">Description</label>
+      <input type="text" id="descrUpdate" name="descr">
+
+      <label for="status">Status</label>
+      <select id="selectStatusUpdate">
+      </select>
+
+      <label for="comm">Comments (separate multiple comments by ";")</label>
+      <textarea rows="3" cols="25" id="commUpdate" name="comm"></textarea>
+
+      <input type="button" id="updateBtn" value="save changes">
+      <input type="button" id="cancelBtn" value="cancel">
+    </form>
+  </div>
+
+  <div id="create-sprint">
+    <h1>Create sprint</h1>
+    <form>
+      <label for="sprintName">Sprint name</label>
+      <input type="text" id="sprintName" name="sprintName">
+
+      <input type="button" id="createSprintBtn" value="create">
+    </form>
+  </div>
+
+  <div id="add-subtask">
+    <h1>Add subtasks</h1>
+    <form id="subtask-form">
+    </form>
+    <input type="button" id="addSubTaskBtn" value="add">
+  </div>
+</div>
+
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/issue.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
